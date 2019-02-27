@@ -1,5 +1,6 @@
 package sx.flatui.flash;
 
+import sx.flatui.flash.Fonts.FiraBoldFont;
 import flash.filters.ColorMatrixFilter;
 import flash.geom.ColorTransform;
 import flash.text.TextFormat;
@@ -38,7 +39,7 @@ class Effects
      */
     static public inline function textFormat (sizePx:Float, color:Int, bold:Bool) : TextFormat
     {
-        var format = new TextFormat('Arial');
+        var format = new TextFormat(FiraBoldFont.NAME);
         format.size = Math.round(sizePx);
         format.color = color;
         format.bold  = bold;

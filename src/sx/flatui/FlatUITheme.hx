@@ -1,5 +1,6 @@
 package sx.flatui;
 
+import sx.flatui.flash.Fonts;
 import sx.themes.Theme;
 import sx.backend.TextFormat;
 import sx.backend.BitmapData;
@@ -158,6 +159,7 @@ class FlatUITheme extends Theme
      */
     static public dynamic function loadAssets (onReady:Void->Void) : Void
     {
+        Fonts.init();
         #if stablexui_flash
             sx.flatui.flash.Assets.loadBitmaps(onReady);
         #else
@@ -169,7 +171,7 @@ class FlatUITheme extends Theme
     /**
      * Creates "native" text format description.
      */
-    static public dynamic function textFormat (sizePx:Float, color:Int, bold:Bool, font:String = 'Arial') : TextFormat
+    static public dynamic function textFormat (sizePx:Float, color:Int, bold:Bool) : TextFormat
     {
         #if stablexui_flash
             var format = sx.flatui.flash.Effects.textFormat(sizePx, color, bold);
